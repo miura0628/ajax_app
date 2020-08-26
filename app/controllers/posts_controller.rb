@@ -1,14 +1,10 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Posts.all
+    @posts = Post.all.order(id: "DESC")
   end
 
   
-  def new
-    
-  end
-
   def create
     Posts.create(memo: params[:memo])
   end
